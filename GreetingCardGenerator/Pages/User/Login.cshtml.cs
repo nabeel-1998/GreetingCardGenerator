@@ -56,7 +56,7 @@ namespace GreetingCardGenerator.Pages.User
             Admin = appData.AdminLogin(Admin);
             if(Admin!=null)
             {
-                return RedirectToPage("../Manager/Dashboard", Admin);
+                return RedirectToPage("../Manager/Dashboard", new { adminId = Admin.ADMIN_ID });
             }
 
             TempData["invalid"] = "Invalid Email or Password";
