@@ -25,12 +25,27 @@ namespace GreetingCardGenerator.Helper
                 for (int j = 0; j < Sequence.Length; j++)
                 {
                     var list = appData.GetGreetingByLetter(Sequence[j]);
-                    Random r = new Random();
-                    var RandomIndex = r.Next(0, list.Count());
-                    var text = list[RandomIndex];
-                    greeting += text + " ";
-                    final.Add(greeting);
+                    if(list.Count()!=0)
+                    {
+                        Random r = new Random();
+                        if (list.Count() > 1)
+                        {
+                            var RandomIndex = r.Next(0, list.Count() - 1);
+                            var text = list[RandomIndex];
+                            greeting += text + " ";
+                        }
+                        else
+                        {
+                            var RandomIndex = 0;
+                            var text = list[RandomIndex];
+                            greeting += text + " ";
+                        }
+                    }
+                   
+                    
+                    
                 }
+                final.Add(greeting);
             }
 
             return final;

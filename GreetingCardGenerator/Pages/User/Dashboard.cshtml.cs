@@ -20,11 +20,7 @@ namespace GreetingCardGenerator.Pages.User
 
         public IActionResult OnPost()
         {
-            if(GName!=null)
-            {
-                return RedirectToPage("./SelectGreetings", new { gname = GName });
-            }
-            return Page();
+            return GName != null ? RedirectToPage("./SelectGreetings", new { gname = GName }) : (IActionResult)Page();
         }
     }
 }
