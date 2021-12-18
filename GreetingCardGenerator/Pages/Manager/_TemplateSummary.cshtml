@@ -1,0 +1,12 @@
+﻿@Model Template
+
+<div class="card" style="width:300px; border:2px solid purple; vertical-align:top;">
+    <div class="card-title">
+        <h4 style="font-weight:bolder;" class="lead col d-flex justify-content-center pt-5">@Model.OCCASSION TEMPLATE</h4>
+    </div>
+    <div class="card-body">
+        <img class="col d-flex justify-content-center" src="data:image/png;base64, @Model.IMAGE" alt="Red dot" />
+        <a asp-page="./DeleteTemplate" asp-route-templateId="@Model.TEMPLATE_ID" class="btn btn-danger col d-flex justify-content-center mt-2">Delete</a>
+    </div>
+
+</div>

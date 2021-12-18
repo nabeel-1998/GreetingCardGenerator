@@ -1,0 +1,21 @@
+﻿@page
+@model GreetingCardGenerator.Pages.Manager.ViewAllTemplateModel
+@{
+    Layout = "_LayoutAdmin";
+}
+
+
+<div class="container" style="display:inline;">
+
+@foreach(var Template in Model.Templates)
+            {
+                <partial name="_TemplateSummary" model="Template" />
+            }
+
+
+</div>
+
+@if(Model.DelMsg!=null)
+            {
+                <div class="alert alert-danger">@Model.DelMsg</div>
+            }

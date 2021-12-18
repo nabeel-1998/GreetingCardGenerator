@@ -1,0 +1,134 @@
+﻿@page
+@model GreetingCardGenerator.Pages.User.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome-free-5.15.4-web/css/all.css" />
+
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <!--Admin Login Card-->
+                <div style="border:2px solid cornflowerblue; border-radius:4px 4px;">
+                    <div class="card">
+                        <div class="card-title font-weight-bolder text-center pt-3">
+                            <h2 style="color:cornflowerblue">Admin Login</h2>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" >
+                                
+                                <div class="form-group">
+                                    <label class="control-label lead" asp-for="AdminEmail">
+                                        Email
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-envelope fa-1x"></i>
+                                            </div>
+                                        </div>
+                                        <input required type="email" asp-for="AdminEmail" class="form-control" />
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="control-label lead" asp-for="AdminPassword">
+                                        Password
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-lock fa-1x"></i>
+                                            </div>
+                                        </div>
+                                        <input required type="password" asp-for="AdminPassword" class="form-control" />
+                                        
+                                    </div>
+                                </div>
+                                <button type="submit" style="background-color:cornflowerblue" class="btn btn-primary btn-block" asp-page-handler="Admin" value="Admin">Sign In</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col">
+                <!--User Login Card-->
+                <div style="border:2px solid darkslategrey; border-radius:4px 4px;">
+                    <div class="card">
+                        <div class="card-title font-weight-bolder text-center pt-3">
+                            <h2 style="color:darkslategrey">User Login</h2>
+                        </div>
+                        <div class="card-body">
+                            <form method="post" >
+                                
+                                <div class="form-group ">
+                                    <label class="control-label lead" asp-for="UserEmail">
+                                        Email
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-envelope fa-1x"></i>
+                                            </div>
+                                        </div>
+                                        <input required type="email" asp-for="UserEmail" class="form-control" />
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="control-label lead" asp-for="UserPassword">
+                                        Password
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-lock fa-1x"></i>
+                                            </div>
+                                        </div>
+                                        <input required type="password" asp-for="UserPassword" class="form-control" />
+                                    </div>
+                                    
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block" asp-page-handler="Member" value="Member">Log In</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if(Model.invalid!=null)
+            {
+                <div class="alert alert-danger">@Model.invalid</div>
+            }
+
+    @section Scripts
+    {
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--Font Awesome Refrences JS-->
+    <script src="~/lib/fontawesome-free-5.15.4-web/js/all.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+

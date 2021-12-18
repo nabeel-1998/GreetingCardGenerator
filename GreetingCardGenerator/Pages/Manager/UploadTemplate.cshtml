@@ -1,0 +1,35 @@
+﻿@page 
+@model GreetingCardGenerator.Pages.Manager.UploadTemplateModel
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-6">
+        <div class="container mt-5">
+            <h1 class="text-center border-primary">Upload A New Template</h1>
+            
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Template.OCCASSION">Select Occassion</label>
+                    <select class="form-control" asp-for="Template.OCCASSION" asp-items="Model.Occassions"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TemplateImage">Choose Template Image</label>
+                    <input required type="file" accept="image/png, image/jpeg" asp-for="TemplateImage" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn bg-primary btn-block">Upload New Template</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+</div>
+
+
+
