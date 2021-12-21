@@ -4,18 +4,24 @@
     Layout = "_LayoutAdmin";
 }
 
+<div class="d-flex ml-4">
+    <div class="container d-inline-flex flex-wrap ml-5">
 
-<div class="container" style="display:inline;">
-
-@foreach(var Template in Model.Templates)
-            {
+        @foreach (var Template in Model.Templates)
+        {
+            <div class="mr-2">
                 <partial name="_TemplateSummary" model="Template" />
-            }
+            </div>
+
+        }
 
 
+    </div>
 </div>
 
-@if(Model.DelMsg!=null)
-            {
-                <div class="alert alert-danger">@Model.DelMsg</div>
-            }
+
+
+@if (Model.DelMsg != null)
+{
+    <div class="alert alert-danger">@Model.DelMsg</div>
+}

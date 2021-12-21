@@ -138,5 +138,12 @@ namespace GreetingCardGenerator.Data
             }
             return glist;
         }
+
+        public Template GetTemplateById(int TemplateId)
+        {
+            return db.Templates.
+                Where(x => x.TEMPLATE_ID == TemplateId).
+                FirstOrDefault();
+        }
     }
 }

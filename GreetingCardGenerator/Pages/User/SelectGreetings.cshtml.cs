@@ -17,11 +17,12 @@ namespace GreetingCardGenerator.Pages.User
         {
             this.appData = appData;
         }
-        public List<string> Greetings { get; set; }
+        public List<Helper.BoldString>[] Greetings;
         public void OnGet(string gname)
         {
             GreetingGenerator GG = new GreetingGenerator(appData);
             Greetings = GG.CreateGreetingForName(gname);
+            
         }
     }
 }

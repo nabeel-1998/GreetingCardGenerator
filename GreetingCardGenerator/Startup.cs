@@ -29,6 +29,7 @@ namespace GreetingCardGenerator
             {
                 options.UseSqlServer(Configuration.GetConnectionString("GCGDb"));
             });
+           
             services.AddScoped<IAppData, SQL_GCG_Data>();
             services.AddRazorPages();
         }

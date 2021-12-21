@@ -5,13 +5,20 @@
 }
 
 <div class="row">
-    <div class="col-sm-1">
-
+    <div class="col-sm">
+       </div>
+    <div class="col-sm-12">
+        <h4 class="lead text-center">Now, Select any template to create your Card</h4>
+        <div class="d-flex ml-4">
+            <div class="container d-inline-flex flex-wrap ml-3">
+                @foreach (var item in Model.Templates)
+                {
+                    <partial name="_CTemplateSummary" model="@item" />
+                }
+            </div>
+        </div>
     </div>
-    <div class="col-sm-10">
-
-    </div>
-    <div class="col-sm-1">
+    <div class="col-sm">
 
     </div>
 </div>

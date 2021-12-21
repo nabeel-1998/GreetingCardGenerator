@@ -1,0 +1,23 @@
+﻿@page "{templateid:int}"
+@model GreetingCardGenerator.Pages.User.PreviewTemplateModel
+@{
+    Layout = "_LayoutUser";
+}
+
+<div class="row">
+    
+    <div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
+        <div class="container">
+            <form method="post">
+                <h3 class="lead text-center mb-2">Here is how your Card will Look Like</h3>
+                <img style="width:500px;border:1px solid cornflowerblue; height:400px;" src="data:image/png;base64, @Model.CardImage" alt="Card Image" />
+                <button type="submit" class="btn btn-primary btn-block mt-2">Continue</button>
+
+            </form>
+            
+        </div>
+    </div>
+   
+</div>
+
+

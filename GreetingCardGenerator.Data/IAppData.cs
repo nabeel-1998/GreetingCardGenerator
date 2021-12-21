@@ -27,6 +27,8 @@ namespace GreetingCardGenerator.Data
         void DeleteAGreeting(int greetingId);
         void UpdateAGreeting(Greetings greeting);
 
+        Template GetTemplateById(int TemplateId);
+
         List<string> GetGreetingByLetter(char a);
 
 
