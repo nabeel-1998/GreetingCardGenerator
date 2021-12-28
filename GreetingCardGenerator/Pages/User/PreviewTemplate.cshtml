@@ -11,10 +11,15 @@
             <form method="post">
                 <h3 class="lead text-center mb-2">Here is how your Card will Look Like</h3>
                 <img style="width:500px;border:1px solid cornflowerblue; height:400px;" src="data:image/png;base64, @Model.CardImage" alt="Card Image" />
-                <button type="submit" class="btn btn-primary btn-block mt-2">Continue</button>
-
-            </form>
-            
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block mt-2">Pay & Download</button>
+                    </div>
+                    <div class="col my-2">
+                        <a class="btn btn-danger btn-block" asp-route-userId=@Helper.InMemoryInfoHolder.UserId asp-page="../User/Dashboard">I Don't Like It'</a>
+                    </div>
+                </div>
+            </form>       
         </div>
     </div>
    

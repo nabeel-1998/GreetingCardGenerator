@@ -56,6 +56,7 @@ namespace GreetingCardGenerator.Pages.User
             Admin = appData.AdminLogin(Admin);
             if(Admin!=null)
             {
+                InMemoryInfoHolder.AdminID = Admin.ADMIN_ID;
                 return RedirectToPage("../Manager/Dashboard", new { adminId = Admin.ADMIN_ID });
             }
 
@@ -79,6 +80,7 @@ namespace GreetingCardGenerator.Pages.User
             var UserEntity = appData.Login(User);
             if(UserEntity!=null)
             {
+                InMemoryInfoHolder.UserId = UserEntity.USER_ID;
                 return RedirectToPage("./Dashboard",new { userId = UserEntity.USER_ID});
             }
             TempData["invalid"] = "Invalid Email or Password";

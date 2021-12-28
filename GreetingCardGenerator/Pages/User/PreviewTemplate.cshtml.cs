@@ -25,6 +25,13 @@ namespace GreetingCardGenerator.Pages.User
             SelectedTemplate = appData.GetTemplateById(templateid);
             //Card Generation will be done here
             CardImage = Helper.CardGenerator.CreateCard(SelectedTemplate);
+            Helper.InMemoryInfoHolder.CardImage = CardImage;
+            
+        }
+
+        public IActionResult OnPost()
+        {
+            return RedirectToPage("./DoPayment");
         }
     }
 }

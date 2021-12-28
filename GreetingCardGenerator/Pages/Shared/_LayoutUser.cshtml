@@ -6,17 +6,27 @@
     <title>@ViewData["Title"] - GreetingCardGenerator</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/custom/StyleSheet.css" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 
             <img height="30" width="30" src="~/image/logo.png" />
-            <ul class="nav nav-pills justify-content-end ml-5" >
+
+            <ul class="nav nav-pills d-flex justify-content-end " style="margin-left:85%;">
                 <li class="nav-item">
                     <!--Link this to login page-->
-                    <a class="nav-link active justify-content-end" ASP-PAGE="../User/Login">LOG OUT</a>
+                    <a class="btn btn-outline-primary" asp-route-userId=@Helper.InMemoryInfoHolder.UserId asp-page="../User/Dashboard/">Home</a>
                 </li>
+
+            </ul>
+            <ul class="nav nav-pills d-flex justify-content-end ml-2">
+                <li class="nav-item">
+                    <!--Link this to login page-->
+                    <a class="btn btn-outline-dark" ASP-PAGE="../User/Login">LOG OUT</a>
+                </li>
+
             </ul>
         </nav>
     </header>
@@ -26,8 +36,10 @@
         </main>
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://stas-melnikov.ru/codepen/ga.js"></script>
+    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>-->
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/custom/JavaScript.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

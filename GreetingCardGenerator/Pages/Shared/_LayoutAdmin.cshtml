@@ -12,12 +12,21 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 
             <img height="30" width="30" src="~/image/logo.png" />
-            <ul class="nav nav-pills justify-content-end ml-5" >
+            <ul class="nav nav-pills d-flex justify-content-end " style="margin-left:85%;">
                 <li class="nav-item">
                     <!--Link this to login page-->
-                    <a class="nav-link active" ASP-PAGE="../User/Login">LOG OUT</a>
+                    <a class="btn btn-outline-primary" asp-route-adminId=@Helper.InMemoryInfoHolder.AdminID asp-page="../Manager/Dashboard/">Home</a>
                 </li>
+
             </ul>
+            <ul class="nav nav-pills d-flex justify-content-end ml-2" >
+                <li class="nav-item">
+                    <!--Link this to login page-->
+                    <a class="btn btn-outline-dark" ASP-PAGE="../User/Login">LOG OUT</a>
+                </li>
+
+            </ul>
+
         </nav>
     </header>
     <div class="container">
