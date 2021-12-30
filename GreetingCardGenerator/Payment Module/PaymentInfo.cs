@@ -7,7 +7,7 @@ namespace GreetingCardGenerator.Payment_Module
 {
     public class PaymentInfo
     {
-        private int cardNumber { get; set; }
+        private string cardNumber { get; set; }
         public int ExpireMonth { get; set; }
         public int ExpireYear { get; set; }
         private int cvc { get; set; }
@@ -18,7 +18,7 @@ namespace GreetingCardGenerator.Payment_Module
                     (cardNumber.ToString(), 
                     Helper.InMemoryInfoHolder.UserId.ToString()); 
                 }
-            set { cardNumber = Convert.ToInt32(value); }
+            set { cardNumber =value; }
         }
 
         public string Cvc 

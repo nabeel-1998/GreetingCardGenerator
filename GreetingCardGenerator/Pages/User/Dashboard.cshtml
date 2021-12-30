@@ -9,37 +9,42 @@
 
     </div>
     <div class="col-sm-8">
-        
-            <div style="border:2px solid cornflowerblue; border-radius:4px 4px;">
-                <div class="card">
-                    <div class="card-title font-weight-bolder text-center pt-3">
-                        <h2 style="color:cornflowerblue">Create Greetings</h2>
-                    </div>
-                    <div class="card-body">
-                        <form method="post">
 
-                            <div class="form-group">
-                                <label class="control-label lead text-center" asp-for="GName">
-                                    Enter A Name To Create Greetings
-                                </label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="fa fa-file-signature fa-1x"></i>
-                                        </div>
+        <div style="border:2px solid cornflowerblue; border-radius:4px 4px;">
+            <div class="card">
+                <div class="card-title font-weight-bolder text-center pt-3">
+                    <h2 style="color:cornflowerblue">Create Greetings</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+
+                        <div class="form-group">
+                            <label class="control-label lead text-center" asp-for="GName">
+                                Enter A Name To Create Greetings
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-file-signature fa-1x"></i>
                                     </div>
-                                    <input required type="text" style="text-transform:uppercase" asp-for="GName" class="form-control" />
-
                                 </div>
+                                <input required type="text" style="text-transform:uppercase" asp-for="GName" class="form-control" />
+
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Create Greetings</button>
-                        </form>
-                    </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Create Greetings</button>
+                    </form>
                 </div>
             </div>
+        </div>
     </div>
     <div class="col-sm-8">
 
     </div>
 </div>
+
+@if(Model.PaymentMessage!=null)
+            {
+<div class="alert alert-success">@Model.PaymentMessage</div>
+            }
 
