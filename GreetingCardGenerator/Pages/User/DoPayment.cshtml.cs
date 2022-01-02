@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using GreetingCardGenerator.Payment_Module;
+using GreetingCardGenerator.Helper;
 
 namespace GreetingCardGenerator.Pages.User
 {
@@ -27,7 +28,9 @@ namespace GreetingCardGenerator.Pages.User
                 if(payment.FormatnPay(paymentinfo))
                 {
                     TempData["PaymentMessage"] = "Payment Successfull, Your card is being downloaded, Meanwhile Create More cards";
-                    return RedirectToPage("./Dashboard");
+                    //return ImageHelper.DownloadCard(InMemoryInfoHolder.CardImage);
+                    
+                    return RedirectToPage("./Dashboard",new { userId=InMemoryInfoHolder.UserId});
                 }
                 TempData["PaymentMessage"]= "Unfortunately, the payment has been declined";
                 return Page();

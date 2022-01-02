@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace GreetingCardGenerator.Data
 {
-    public class SQL_GCG_Data:IAppData
+    public class SQL_GCG_Data : IAppData
     {
         private readonly GreetingCardGeneratorDbContext db;
 
