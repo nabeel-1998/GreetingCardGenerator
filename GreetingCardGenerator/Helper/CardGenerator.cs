@@ -15,23 +15,23 @@ namespace GreetingCardGenerator.Helper
            
             foreach(var item in GreetingWord.SetGreetingPoints())
             {
-                int offset = 70;
+                int offset = 100;
                 var word = item.Word.Substring(0, 1);
                 var remainingword = item.Word.Substring(1);
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    using (Font arialFont = new Font("Consolas", 30,FontStyle.Bold))
+                    using (Font arialFont = new Font("Happy Monkey", 35,FontStyle.Bold))
                     {
-                        graphics.DrawString(word, arialFont, Brushes.Aqua, item.Location);
+                        graphics.DrawString(word, arialFont, Brushes.DarkCyan, item.Location);
                         
                     }
                 }
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    using (Font arialFont = new Font("Consolas", 30, FontStyle.Bold))
+                    using (Font arialFont = new Font("Happy Monkey", 35, FontStyle.Bold))
                     {
                         var point = new PointF() { X = item.Location.X + offset, Y = item.Location.Y };
-                        graphics.DrawString(remainingword, arialFont, Brushes.CornflowerBlue, point);
+                        graphics.DrawString(remainingword, arialFont, Brushes.Peru, point);
 
                     }
                 }
@@ -71,8 +71,8 @@ namespace GreetingCardGenerator.Helper
         public String Word { get; set; }
         public PointF Location { get; set; }
 
-        static float x = 700f;
-        static float y = 300f;
+        static float x = 500f;
+        static float y = 350f;
         public static List<GreetingWord> SetGreetingPoints()
         {
             List<GreetingWord> greetingpoints = new List<GreetingWord>();
@@ -80,7 +80,7 @@ namespace GreetingCardGenerator.Helper
             {
                 var CurrentWord = item.BoldLetter.ToString() + item.RemainingString;
                 PointF point = new PointF(x, y);
-                y += 100;
+                y += 130;
                 greetingpoints.Add(new GreetingWord() { Word = CurrentWord, Location = point });
                 
 
