@@ -28,8 +28,6 @@ namespace GreetingCardGenerator.Pages.User
                 if(payment.FormatnPay(paymentinfo))
                 {
                     TempData["PaymentMessage"] = "Payment Successfull, Your card is being downloaded, Meanwhile Create More cards";
-                    //return ImageHelper.DownloadCard(InMemoryInfoHolder.CardImage);
-                    
                     return RedirectToPage("./Dashboard",new { userId=InMemoryInfoHolder.UserId});
                 }
                 TempData["PaymentMessage"]= "Unfortunately, the payment has been declined";

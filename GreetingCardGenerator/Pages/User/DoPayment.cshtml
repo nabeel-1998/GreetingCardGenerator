@@ -47,11 +47,27 @@
                 </div>
             </div>
         </div>
+        <<img hidden id="cardimage" src="data:image/png;base64, @Helper.InMemoryInfoHolder.CardImage"/>
         <div class="payment-card__footer">
-            <button class="payment-card__button">Pay Rs. 100</button>
+            <button class="payment-card__button"><a class="payment-card__button" download="CARD.png" href="#" onclick="DownloadImage()">Pay Rs. 100</a></button>
+            
         </div>
     </form>
 </div>
+
+<script>
+    function DownloadImage()
+    {
+        const canvas = document.getElementById("cardimage");
+        const canvasContent = canvas.src;
+        var a = document.createElement("a"); //Create <a>
+        //a.href = "data:image/png;base64," + @Helper.InMemoryInfoHolder.CardImage; //Image Base64 Goes here
+        a.href = canvasContent;
+        a.download = "Card.png"; //File name Here
+        a.click(); //Downloaded file
+
+    }
+</script>
 
 @if(Model.PaymentMessage!=null)
             {

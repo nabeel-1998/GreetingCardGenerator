@@ -8,12 +8,12 @@ namespace GreetingCardGenerator.Helper
 {
     public class CardGenerator
     {
-        public static string CreateCard(Template selectedTemplate)
+        public static string CreateCard(Template selectedTemplate,float x, float y)
         {
             byte[] ImageArray = Convert.FromBase64String(selectedTemplate.IMAGE);
             var bitmap = ByteArrayToImage(ImageArray);
            
-            foreach(var item in GreetingWord.SetGreetingPoints())
+            foreach(var item in GreetingWord.SetGreetingPoints(x,y))
             {
                 int offset = 100;
                 var word = item.Word.Substring(0, 1);
@@ -71,10 +71,17 @@ namespace GreetingCardGenerator.Helper
         public String Word { get; set; }
         public PointF Location { get; set; }
 
-        static float x = 500f;
-        static float y = 350f;
-        public static List<GreetingWord> SetGreetingPoints()
+        
+        public static List<GreetingWord> SetGreetingPoints(float x, float y)
         {
+            if(y==0)
+            {
+                y = 350f; // X oosition
+            }
+            if(x==0)
+            {
+                x = 500f; // Y Position
+            }
             List<GreetingWord> greetingpoints = new List<GreetingWord>();
             foreach(var item in InMemoryInfoHolder.SelectedGreeting)
             {

@@ -1,11 +1,11 @@
-﻿@page "{templateid:int}"
+﻿@page "{templateid:int?}"
 @model GreetingCardGenerator.Pages.User.PreviewTemplateModel
 @{
     Layout = "_LayoutUser";
 }
 
 <div class="row">
-    
+
     <div style="margin: auto; width: 50%; border: 3px solid green; padding: 10px;">
         <div class="container">
             <form method="post">
@@ -13,16 +13,58 @@
                 <img style="width:500px;border:1px solid cornflowerblue; height:400px;" src="data:image/png;base64, @Model.CardImage" alt="Card Image" />
                 <div class="row">
                     <div class="col">
-                        <button type="submit" class="btn btn-primary btn-block mt-2">Pay & Download</button>
+                        <button type="submit" asp-page-handler="Pay" class="btn btn-primary btn-block mt-2">Pay & Download</button>
                     </div>
                     <div class="col my-2">
                         <a class="btn btn-danger btn-block" asp-route-userId=@Helper.InMemoryInfoHolder.UserId asp-page="../User/Dashboard">I Don't Like It'</a>
                     </div>
                 </div>
-            </form>       
+            </form>
         </div>
     </div>
-   
+
 </div>
 
+<div class="d-flex justify-content-center">
+    <div class="row ml-2"><h6 class="lead font-weight-bold fs-2">Adjust Horizontally</h6></div>
+    <div class="row mr-2">
 
+        <div class="col">
+            <form method="post">
+                <button class="btn btn-primary" type="submit" asp-page-handler="Xm">-</button>
+            </form>
+        </div>
+        <div class="col">
+            <input readonly id="xv" value="@Helper.InMemoryInfoHolder.x" />
+        </div>
+        <div class="col">
+            <form method="post">
+                <button class="btn btn-primary" type="submit" asp-page-handler="Xp">+</button>
+            </form>
+        </div>
+    </div>
+    <div class="row ml-2"><h6 class="lead font-weight-bold fs-2">Adjust Vertically</h6></div>
+    <div class="row ml-2">
+
+        <div class="col">
+            <form method="post">
+                <button class="btn btn-danger" type="submit" asp-page-handler="Ym">-</button>
+            </form>
+        </div>
+        <div class="col">
+            <input readonly id="yv" value="@Helper.InMemoryInfoHolder.y" />
+        </div>
+        <div class="col">
+            <form method="post">
+                <button class="btn btn-primary" type="submit" asp-page-handler="Yp">+</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+   
+    
+    
+        
+           
+           
